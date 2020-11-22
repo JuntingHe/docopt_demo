@@ -2,8 +2,7 @@
 # date: 2020-01-15
 
 "This script prints out docopt args.
-Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3] [--arg4=<arg4>]
-
+Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3>] [--arg4=<arg4>]
 Options:
 <arg>             Takes any value (this is a required positional argument)
 --arg2=<arg2>     Takes any value (this is a required option)
@@ -12,7 +11,11 @@ Options:
 " -> doc
 
 library(docopt)
-opt <- docopt(doc)
-print(opt)
-print(typeof(opt))
-print(opt$arg4)
+main <- function(){
+    opt <- docopt(doc)
+    print(opt)
+    print(typeof(opt))
+    print(opt$arg4)
+}
+
+main()
